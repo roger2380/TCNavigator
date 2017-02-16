@@ -31,4 +31,10 @@
 }
 
 
+- (TCURLAction*)applyAnimated:(BOOL)animated {
+  self.animated = animated;
+  return self;
+}
+
+
 @end

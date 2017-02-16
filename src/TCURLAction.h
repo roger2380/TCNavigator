@@ -10,11 +10,14 @@
 
 @interface TCURLAction : NSObject
 
-@property (nonatomic, copy) NSString *urlPath;
-@property (nonatomic, copy) NSString *parentURLPath;
+@property (nonatomic, copy)   NSString  *urlPath;
+@property (nonatomic, copy)   NSString  *parentURLPath;
+@property (nonatomic, assign) BOOL       animated;
 
 + (id)actionWithURLPath:(NSString*)urlPath;
 
 - (TCURLAction*)applyParentURLPath:(NSString*)parentURLPath;
+
+- (TCURLAction*)applyAnimated:(BOOL)animated;
 
 @end

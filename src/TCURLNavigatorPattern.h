@@ -7,12 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TCNavigationMode.h"
+#import "TCURLPattern.h"
 
-@interface TCURLNavigatorPattern : NSObject
+@interface TCURLNavigatorPattern : TCURLPattern
 
-@property (nonatomic, copy)     NSString *URL;
-@property (nonatomic, readonly) NSString *scheme;
+@property (nonatomic, weak)      Class             targetClass;
+@property (nonatomic, weak)      id                targetObject;
+@property (nonatomic, readonly)  TCNavigationMode  navigationMode;
+@property (nonatomic, copy)      NSString          *parentURL;
+
+- (id)initWithTarget:(id)target;
+- (id)initWithTarget:(id)target mode:(TCNavigationMode)navigationMode;
 
 - (void)compile;
+
+- (BOOL)matchURL:(NSURL*)URL;
 
 @end

@@ -8,10 +8,13 @@
 
 #import "TCNavigator.h"
 #import "TCNavigtorDelegate.h"
+#import "TCURLNavigatorPattern.h"
 
 static TCNavigator *gNavigator = nil;
 
+
 @implementation TCNavigator
+
 
 - (id)init {
   self = [super init];
@@ -54,7 +57,38 @@ static TCNavigator *gNavigator = nil;
     }
   }
 
+  TCURLNavigatorPattern *pattern = nil;
+  UIViewController *controller = [self viewControllerForURL:urlPath
+                                                      query:action.query
+                                                    pattern:&pattern];
   
 }
+
+
+- (UIViewController*)viewControllerForURL:(NSString*)URL
+                                    query:(NSDictionary*)query
+                                  pattern:(TCURLNavigatorPattern**)pattern {
+  
+  id object = [_URLMap objectForURL:URL query:query pattern:pattern];
+  if (object) {
+    UIViewController *controller = object;
+    controller.originalNavigatorURL = URL;
+    
+    if (_delayCount) {
+      if (!_delayedControllers) {
+        _delayedControllers = [[NSMutableArray alloc] initWithObjects:controller,nil];
+        
+      } else {
+        [_delayedControllers addObject:controller];
+      }
+    }
+    
+    return controller;
+    
+  } else {
+    return nil;
+  }
+}
+
 
 @end
