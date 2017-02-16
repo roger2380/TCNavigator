@@ -32,7 +32,6 @@
 
 
 - (id)objectForURL:(NSString*)URL
-             query:(NSDictionary*)query
            pattern:(TCURLNavigatorPattern**)outPattern;
 
 @end

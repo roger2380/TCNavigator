@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface TCURLPattern : NSObject {
-  NSMutableArray        *_path;
-  NSMutableDictionary   *_query;
+  NSMutableArray      *_path;
+  NSMutableDictionary *_query;
 }
 
 @property (nonatomic, readonly) NSString  *scheme;

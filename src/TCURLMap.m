@@ -96,7 +96,6 @@
 
 
 - (id)objectForURL:(NSString*)URL
-             query:(NSDictionary*)query
            pattern:(TCURLNavigatorPattern**)outPattern {
   id object = nil;
   if (_objectMappings) {
@@ -110,7 +109,7 @@
   TCURLNavigatorPattern *pattern = [self matchObjectPattern:theURL];
   if (pattern) {
     if (!object) {
-      object = [pattern createObjectFromURL:theURL query:query];
+      object = [pattern createObjectFromURL:theURL];
     }
     if (pattern.navigationMode == TCNavigationModeShare && object) {
       [self setObject:object forURL:URL];

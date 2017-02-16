@@ -24,4 +24,6 @@
 
 - (BOOL)matchURL:(NSURL*)URL;
 
+- (id)createObjectFromURL:(NSURL*)URL;
+
 @end

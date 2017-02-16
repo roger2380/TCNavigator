@@ -18,6 +18,9 @@
 		6596C12C1E52A0EA00B63C7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6596C12A1E52A0EA00B63C7A /* LaunchScreen.storyboard */; };
 		6596C1361E52A9F700B63C7A /* TCNavigator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6596C1351E52A9F700B63C7A /* TCNavigator.m */; };
 		6596C1391E52AA1D00B63C7A /* TCURLMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 6596C1381E52AA1D00B63C7A /* TCURLMap.m */; };
+		65B1CE8B1E55F0A1003BD294 /* TCURLLiteral.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B1CE8A1E55F0A1003BD294 /* TCURLLiteral.m */; };
+		65B1CE8E1E55F0B5003BD294 /* TCURLWildcard.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B1CE8D1E55F0B5003BD294 /* TCURLWildcard.m */; };
+		65B1CE921E55F190003BD294 /* TCURLArguments.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B1CE911E55F190003BD294 /* TCURLArguments.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +46,13 @@
 		6596C1351E52A9F700B63C7A /* TCNavigator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCNavigator.m; sourceTree = "<group>"; };
 		6596C1371E52AA1D00B63C7A /* TCURLMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCURLMap.h; sourceTree = "<group>"; };
 		6596C1381E52AA1D00B63C7A /* TCURLMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCURLMap.m; sourceTree = "<group>"; };
+		65B1CE891E55F0A1003BD294 /* TCURLLiteral.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCURLLiteral.h; sourceTree = "<group>"; };
+		65B1CE8A1E55F0A1003BD294 /* TCURLLiteral.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCURLLiteral.m; sourceTree = "<group>"; };
+		65B1CE8C1E55F0B5003BD294 /* TCURLWildcard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCURLWildcard.h; sourceTree = "<group>"; };
+		65B1CE8D1E55F0B5003BD294 /* TCURLWildcard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCURLWildcard.m; sourceTree = "<group>"; };
+		65B1CE8F1E55F0CA003BD294 /* TCURLPatternText.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCURLPatternText.h; sourceTree = "<group>"; };
+		65B1CE901E55F190003BD294 /* TCURLArguments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCURLArguments.h; sourceTree = "<group>"; };
+		65B1CE911E55F190003BD294 /* TCURLArguments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCURLArguments.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,8 +120,15 @@
 				655523701E52B2DD00042CD8 /* TCURLAction.m */,
 				655524551E55931000042CD8 /* TCURLPattern.h */,
 				655524561E55931000042CD8 /* TCURLPattern.m */,
+				65B1CE8F1E55F0CA003BD294 /* TCURLPatternText.h */,
+				65B1CE891E55F0A1003BD294 /* TCURLLiteral.h */,
+				65B1CE8A1E55F0A1003BD294 /* TCURLLiteral.m */,
+				65B1CE8C1E55F0B5003BD294 /* TCURLWildcard.h */,
+				65B1CE8D1E55F0B5003BD294 /* TCURLWildcard.m */,
 				655523571E52AFA800042CD8 /* TCURLNavigatorPattern.h */,
 				655523581E52AFA800042CD8 /* TCURLNavigatorPattern.m */,
+				65B1CE901E55F190003BD294 /* TCURLArguments.h */,
+				65B1CE911E55F190003BD294 /* TCURLArguments.m */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -188,14 +205,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65B1CE8E1E55F0B5003BD294 /* TCURLWildcard.m in Sources */,
 				655523711E52B2DD00042CD8 /* TCURLAction.m in Sources */,
 				655524571E55931000042CD8 /* TCURLPattern.m in Sources */,
+				65B1CE8B1E55F0A1003BD294 /* TCURLLiteral.m in Sources */,
 				6596C1391E52AA1D00B63C7A /* TCURLMap.m in Sources */,
 				655523591E52AFA800042CD8 /* TCURLNavigatorPattern.m in Sources */,
 				6596C1241E52A0EA00B63C7A /* ViewController.m in Sources */,
 				6596C1211E52A0EA00B63C7A /* AppDelegate.m in Sources */,
 				6596C1361E52A9F700B63C7A /* TCNavigator.m in Sources */,
 				6596C11E1E52A0EA00B63C7A /* main.m in Sources */,
+				65B1CE921E55F190003BD294 /* TCURLArguments.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

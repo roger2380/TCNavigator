@@ -59,32 +59,19 @@ static TCNavigator *gNavigator = nil;
 
   TCURLNavigatorPattern *pattern = nil;
   UIViewController *controller = [self viewControllerForURL:urlPath
-                                                      query:action.query
                                                     pattern:&pattern];
-  
+  //TODO跳转
+  return controller;
 }
 
 
 - (UIViewController*)viewControllerForURL:(NSString*)URL
-                                    query:(NSDictionary*)query
                                   pattern:(TCURLNavigatorPattern**)pattern {
   
-  id object = [_URLMap objectForURL:URL query:query pattern:pattern];
+  id object = [_URLMap objectForURL:URL pattern:pattern];
   if (object) {
     UIViewController *controller = object;
-    controller.originalNavigatorURL = URL;
-    
-    if (_delayCount) {
-      if (!_delayedControllers) {
-        _delayedControllers = [[NSMutableArray alloc] initWithObjects:controller,nil];
-        
-      } else {
-        [_delayedControllers addObject:controller];
-      }
-    }
-    
     return controller;
-    
   } else {
     return nil;
   }
