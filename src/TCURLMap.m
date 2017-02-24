@@ -62,7 +62,7 @@
 
 
 - (void)from:(NSString*)URL toViewController:(id)target {
-  TCURLNavigatorPattern* pattern = [[TCURLNavigatorPattern alloc] initWithTarget:target
+  TCURLNavigatorPattern *pattern = [[TCURLNavigatorPattern alloc] initWithTarget:target
                                                                             mode:TCNavigationModeCreate];
   [self addObjectPattern:pattern forURL:URL];
 }
@@ -77,7 +77,7 @@
 
 
 - (void)from:(NSString*)URL parent:(NSString*)parentURL toViewController:(id)target selector:(SEL)selector {
-  TCURLNavigatorPattern* pattern = [[TCURLNavigatorPattern alloc] initWithTarget:target
+  TCURLNavigatorPattern *pattern = [[TCURLNavigatorPattern alloc] initWithTarget:target
                                                                             mode:TCNavigationModeCreate];
   pattern.parentURL = parentURL;
   pattern.selector = selector;
@@ -127,7 +127,8 @@
 
 - (void)setObject:(id)object forURL:(NSString*)URL {
   if (nil == _objectMappings) {
-    _objectMappings = TTCreateNonRetainingDictionary();
+//    _objectMappings = TTCreateNonRetainingDictionary();
+    _objectMappings = [[NSMutableDictionary alloc] init];
   }
   // XXXjoe Normalize the URL first
   [_objectMappings setObject:object forKey:URL];

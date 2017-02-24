@@ -10,6 +10,8 @@
 #import "TCURLPatternText.h"
 #import "TCURLWildcard.h"
 
+#import <objc/runtime.h>
+
 @interface TCURLNavigatorPattern () {
   NSInteger _argumentCount;
 }
@@ -58,6 +60,12 @@
 }
 
 
+- (BOOL)callsInstanceMethod {
+  return (nil != _targetObject && [_targetObject class] != _targetObject)
+  || nil != _targetClass;
+}
+
+
 - (id)invoke:(id)target withURL:(NSURL*)URL {
   id returnValue = nil;
   
@@ -83,20 +91,20 @@
   
 //  NSInteger remainingArgs = _argumentCount;
   
-  NSArray* pathComponents = URL.path.pathComponents;
+  NSArray *pathComponents = URL.path.pathComponents;
   for (NSInteger i = 0; i < _path.count; ++i) {
     id<TCURLPatternText> patternText = [_path objectAtIndex:i];
-    NSString* text = i == 0 ? URL.host : [pathComponents objectAtIndex:i];
+    NSString *text = i == 0 ? URL.host : [pathComponents objectAtIndex:i];
     if ([self setArgument:text pattern:patternText forInvocation:invocation]) {
 //      --remainingArgs;
     }
   }
   
-  NSDictionary* URLQuery = [URL.query queryContentsUsingEncoding:NSUTF8StringEncoding];
+  NSDictionary *URLQuery = [URL.query queryContentsUsingEncoding:NSUTF8StringEncoding];
   if (URLQuery.count) {
-    for (NSString* name in [URLQuery keyEnumerator]) {
+    for (NSString *name in [URLQuery keyEnumerator]) {
       id<TCURLPatternText> patternText = [_query objectForKey:name];
-      NSString* text = [[URLQuery objectForKey:name] objectAtIndex:0];
+      NSString *text = [[URLQuery objectForKey:name] objectAtIndex:0];
       if (patternText) {
         if ([self setArgument:text pattern:patternText forInvocation:invocation]) {
 //          --remainingArgs;
@@ -128,7 +136,7 @@
       forInvocation:(NSInvocation*)invocation {
   
   if ([patternText isKindOfClass:[TCURLWildcard class]]) {
-    TCURLWildcard* wildcard = (TCURLWildcard*)patternText;
+    TCURLWildcard *wildcard = (TCURLWildcard*)patternText;
     NSInteger argIndex = wildcard.argIndex;
     if (argIndex != NSNotFound && argIndex < _argumentCount) {
       switch (wildcard.argType) {
@@ -172,14 +180,14 @@
 }
 
 
-//匹配规则:只要path的count一致，并且每一个path要吻合，
+//匹配规则:path的count要一致，并且每一个path要相等，
 //_path第一个元素是host
 - (BOOL)matchURL:(NSURL*)URL {
   if (!URL.scheme || !URL.host || ![self.scheme isEqualToString:URL.scheme]) {
     return NO;
   }
   
-  NSArray* pathComponents = URL.path.pathComponents;
+  NSArray *pathComponents = URL.path.pathComponents;
   NSInteger componentCount = URL.path.length ? pathComponents.count : (URL.host ? 1 : 0);
   if (componentCount != _path.count) {
     return NO;
@@ -249,6 +257,80 @@
 
 - (Class)classForInvocation {
   return _targetClass ? _targetClass : [_targetObject class];
+}
+
+
+//根据(xxxx:)推断出selector
+- (void)deduceSelector {
+  NSMutableArray *parts = [NSMutableArray array];
+  
+  for (id<TCURLPatternText> pattern in _path) {
+    if ([pattern isKindOfClass:[TCURLWildcard class]]) {
+      TCURLWildcard* wildcard = (TCURLWildcard*)pattern;
+      if (wildcard.name) {
+        [parts addObject:wildcard.name];
+      }
+    }
+  }
+  
+  for (id<TCURLPatternText> pattern in [_query objectEnumerator]) {
+    if ([pattern isKindOfClass:[TCURLWildcard class]]) {
+      TCURLWildcard* wildcard = (TCURLWildcard*)pattern;
+      if (wildcard.name) {
+        [parts addObject:wildcard.name];
+      }
+    }
+  }
+  
+  if (parts.count) {
+    [self setSelectorWithNames:parts];
+  }
+}
+
+
+//根据TCURLWildcard 推断出参数类型
+- (void)analyzeMethod {
+  Class cls = [self classForInvocation];
+  Method method = [self callsInstanceMethod]
+  ? class_getInstanceMethod(cls, self.selector)
+  : class_getClassMethod(cls, self.selector);
+  if (method) {
+    _argumentCount = method_getNumberOfArguments(method)-2;
+    
+    // Look up the index and type of each argument in the method
+    const char *selName = sel_getName(self.selector);
+    NSString *selectorName = [[NSString alloc] initWithBytesNoCopy:(char*)selName
+                                                            length:strlen(selName)
+                                                          encoding:NSASCIIStringEncoding freeWhenDone:NO];
+    
+    NSArray *argNames = [selectorName componentsSeparatedByString:@":"];
+    
+    for (id<TCURLPatternText> pattern in _path) {
+      [self analyzeArgument:pattern method:method argNames:argNames];
+    }
+    
+    for (id<TCURLPatternText> pattern in [_query objectEnumerator]) {
+      [self analyzeArgument:pattern method:method argNames:argNames];
+    }
+  }
+}
+
+
+//分析参数类型
+- (void)analyzeArgument:(id<TCURLPatternText>)pattern
+                 method:(Method)method
+               argNames:(NSArray*)argNames {
+  if ([pattern isKindOfClass:[TCURLWildcard class]]) {
+    TCURLWildcard *wildcard = (TCURLWildcard*)pattern;
+    wildcard.argIndex = [argNames indexOfObject:wildcard.name];
+    if (wildcard.argIndex == NSNotFound) {
+      
+    } else {
+      char argType[256];
+      method_getArgumentType(method, wildcard.argIndex+2, argType, 256);
+      wildcard.argType = TCConvertArgumentType(argType[0]);
+    }
+  }
 }
 
 

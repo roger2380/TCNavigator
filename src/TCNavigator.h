@@ -13,7 +13,9 @@
 
 @protocol TCNavigtorDelegate;
 
-@interface TCNavigator : NSObject
+@interface TCNavigator : NSObject {
+  UIViewController *_rootViewController;
+}
 
 @property (nonatomic, readonly) TCURLMap                *URLMap;
 @property (nonatomic, weak)     id<TCNavigtorDelegate>   delegate;

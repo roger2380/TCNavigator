@@ -57,6 +57,7 @@
   }
 }
 
+
 //如果是以()扩起来的，转换成TCURLWildcard，否则转换成TCURLLiteral
 - (id<TCURLPatternText>)parseText:(NSString*)text {
   NSInteger len = text.length;
@@ -102,7 +103,7 @@
 
 
 - (void)setSelectorWithNames:(NSArray*)names {
-  NSString* selectorName = [[names componentsJoinedByString:@":"] stringByAppendingString:@":"];
+  NSString *selectorName = [[names componentsJoinedByString:@":"] stringByAppendingString:@":"];
   SEL selector = NSSelectorFromString(selectorName);
   [self setSelectorIfPossible:selector];
 }
