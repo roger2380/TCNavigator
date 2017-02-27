@@ -13,6 +13,8 @@
 
 #import <objc/runtime.h>
 
+#import "NSString+TCNavigator.h"
+
 @interface TCURLPattern() {
 
 }

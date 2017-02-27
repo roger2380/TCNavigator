@@ -13,10 +13,11 @@
 		655524961E602F2000042CD8 /* UIViewController+TCNavigator.m in Sources */ = {isa = PBXBuildFile; fileRef = 655524951E602F2000042CD8 /* UIViewController+TCNavigator.m */; };
 		655524991E602F6800042CD8 /* UINavigationController+TCNavigator.m in Sources */ = {isa = PBXBuildFile; fileRef = 655524981E602F6800042CD8 /* UINavigationController+TCNavigator.m */; };
 		6555249C1E60314100042CD8 /* UITabBarController+TCNavigator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6555249B1E60314100042CD8 /* UITabBarController+TCNavigator.m */; };
+		655F74881E64316A00B580B0 /* NSString+TCNavigator.m in Sources */ = {isa = PBXBuildFile; fileRef = 655F74871E64316A00B580B0 /* NSString+TCNavigator.m */; };
+		655F748B1E6432DD00B580B0 /* ClassAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 655F748A1E6432DD00B580B0 /* ClassAViewController.m */; };
 		6596C11E1E52A0EA00B63C7A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6596C11D1E52A0EA00B63C7A /* main.m */; };
 		6596C1211E52A0EA00B63C7A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6596C1201E52A0EA00B63C7A /* AppDelegate.m */; };
 		6596C1241E52A0EA00B63C7A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6596C1231E52A0EA00B63C7A /* ViewController.m */; };
-		6596C1271E52A0EA00B63C7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6596C1251E52A0EA00B63C7A /* Main.storyboard */; };
 		6596C1291E52A0EA00B63C7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6596C1281E52A0EA00B63C7A /* Assets.xcassets */; };
 		6596C12C1E52A0EA00B63C7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6596C12A1E52A0EA00B63C7A /* LaunchScreen.storyboard */; };
 		6596C1361E52A9F700B63C7A /* TCNavigator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6596C1351E52A9F700B63C7A /* TCNavigator.m */; };
@@ -41,13 +42,16 @@
 		655524981E602F6800042CD8 /* UINavigationController+TCNavigator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+TCNavigator.m"; sourceTree = "<group>"; };
 		6555249A1E60314100042CD8 /* UITabBarController+TCNavigator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarController+TCNavigator.h"; sourceTree = "<group>"; };
 		6555249B1E60314100042CD8 /* UITabBarController+TCNavigator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarController+TCNavigator.m"; sourceTree = "<group>"; };
+		655F74861E64316A00B580B0 /* NSString+TCNavigator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TCNavigator.h"; sourceTree = "<group>"; };
+		655F74871E64316A00B580B0 /* NSString+TCNavigator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TCNavigator.m"; sourceTree = "<group>"; };
+		655F74891E6432DD00B580B0 /* ClassAViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassAViewController.h; sourceTree = "<group>"; };
+		655F748A1E6432DD00B580B0 /* ClassAViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassAViewController.m; sourceTree = "<group>"; };
 		6596C1191E52A0EA00B63C7A /* TCNavigator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TCNavigator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6596C11D1E52A0EA00B63C7A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6596C11F1E52A0EA00B63C7A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6596C1201E52A0EA00B63C7A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		6596C1221E52A0EA00B63C7A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		6596C1231E52A0EA00B63C7A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		6596C1261E52A0EA00B63C7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6596C1281E52A0EA00B63C7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6596C12B1E52A0EA00B63C7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6596C12D1E52A0EA00B63C7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -78,7 +82,7 @@
 		6596C1101E52A0EA00B63C7A = {
 			isa = PBXGroup;
 			children = (
-				6596C1331E52A12700B63C7A /* src */,
+				6596C1331E52A12700B63C7A /* Src */,
 				6596C11B1E52A0EA00B63C7A /* TCNavigator */,
 				6596C11A1E52A0EA00B63C7A /* Products */,
 			);
@@ -99,7 +103,8 @@
 				6596C1201E52A0EA00B63C7A /* AppDelegate.m */,
 				6596C1221E52A0EA00B63C7A /* ViewController.h */,
 				6596C1231E52A0EA00B63C7A /* ViewController.m */,
-				6596C1251E52A0EA00B63C7A /* Main.storyboard */,
+				655F74891E6432DD00B580B0 /* ClassAViewController.h */,
+				655F748A1E6432DD00B580B0 /* ClassAViewController.m */,
 				6596C1281E52A0EA00B63C7A /* Assets.xcassets */,
 				6596C12A1E52A0EA00B63C7A /* LaunchScreen.storyboard */,
 				6596C12D1E52A0EA00B63C7A /* Info.plist */,
@@ -116,7 +121,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		6596C1331E52A12700B63C7A /* src */ = {
+		6596C1331E52A12700B63C7A /* Src */ = {
 			isa = PBXGroup;
 			children = (
 				655523BD1E530EBC00042CD8 /* TCNavigtorDelegate.h */,
@@ -144,7 +149,10 @@
 				655524981E602F6800042CD8 /* UINavigationController+TCNavigator.m */,
 				6555249A1E60314100042CD8 /* UITabBarController+TCNavigator.h */,
 				6555249B1E60314100042CD8 /* UITabBarController+TCNavigator.m */,
+				655F74861E64316A00B580B0 /* NSString+TCNavigator.h */,
+				655F74871E64316A00B580B0 /* NSString+TCNavigator.m */,
 			);
+			name = Src;
 			path = src;
 			sourceTree = "<group>";
 		};
@@ -209,7 +217,6 @@
 			files = (
 				6596C12C1E52A0EA00B63C7A /* LaunchScreen.storyboard in Resources */,
 				6596C1291E52A0EA00B63C7A /* Assets.xcassets in Resources */,
-				6596C1271E52A0EA00B63C7A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,8 +231,10 @@
 				655523711E52B2DD00042CD8 /* TCURLAction.m in Sources */,
 				655524571E55931000042CD8 /* TCURLPattern.m in Sources */,
 				65B1CE8B1E55F0A1003BD294 /* TCURLLiteral.m in Sources */,
+				655F74881E64316A00B580B0 /* NSString+TCNavigator.m in Sources */,
 				6596C1391E52AA1D00B63C7A /* TCURLMap.m in Sources */,
 				655523591E52AFA800042CD8 /* TCURLNavigatorPattern.m in Sources */,
+				655F748B1E6432DD00B580B0 /* ClassAViewController.m in Sources */,
 				6596C1241E52A0EA00B63C7A /* ViewController.m in Sources */,
 				655524961E602F2000042CD8 /* UIViewController+TCNavigator.m in Sources */,
 				6596C1211E52A0EA00B63C7A /* AppDelegate.m in Sources */,
@@ -240,14 +249,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		6596C1251E52A0EA00B63C7A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6596C1261E52A0EA00B63C7A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		6596C12A1E52A0EA00B63C7A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

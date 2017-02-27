@@ -21,4 +21,32 @@
 }
 
 
+//当前controller的containing controller，比如navgation controller或者 tabbar controller
+- (UIViewController*)superController {
+  //TODO这里可能要改下
+  UIViewController *parent = self.parentViewController;
+  if (nil != parent) {
+    return parent;
+    
+  }
+  return nil;
+//  else {
+//    NSString *key = [NSString stringWithFormat:@"%d", self.hash];
+//    return [gSuperControllers objectForKey:key];
+//  }
+}
+
+
+- (void)bringControllerToFront:(UIViewController*)controller animated:(BOOL)animated {
+  
+}
+
+
+- (void)addSubcontroller:(UIViewController*)controller animated:(BOOL)animated {
+  if (self.navigationController) {
+    [self.navigationController addSubcontroller:controller animated:animated];
+  }
+}
+
+
 @end

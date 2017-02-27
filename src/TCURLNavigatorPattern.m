@@ -12,6 +12,8 @@
 
 #import <objc/runtime.h>
 
+#import "NSString+TCNavigator.h"
+
 @interface TCURLNavigatorPattern () {
   NSInteger _argumentCount;
 }

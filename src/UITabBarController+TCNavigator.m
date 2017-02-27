@@ -21,4 +21,14 @@
 }
 
 
+- (void)bringControllerToFront:(UIViewController*)controller animated:(BOOL)animated {
+  self.selectedViewController = controller;
+}
+
+
+- (void)addSubcontroller:(UIViewController*)controller animated:(BOOL)animated {
+  self.selectedViewController = controller;
+}
+
+
 @end

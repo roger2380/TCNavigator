@@ -21,4 +21,17 @@
 }
 
 
+- (void)bringControllerToFront:(UIViewController*)controller animated:(BOOL)animated {
+  if ([self.viewControllers indexOfObject:controller] != NSNotFound
+      && controller != self.topViewController) {
+    [self popToViewController:controller animated:animated];
+  }
+}
+
+
+- (void)addSubcontroller:(UIViewController*)controller animated:(BOOL)animated {
+  [self pushViewController:controller animated:animated];
+}
+
+
 @end

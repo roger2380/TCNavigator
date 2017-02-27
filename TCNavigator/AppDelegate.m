@@ -7,6 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import "TCURLMap.h"
+#import "TCNavigator.h"
+#import "ClassAViewController.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,6 +20,16 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+
+  self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+  [self.window makeKeyAndVisible];
+  
+  TCURLMap *map = [TCNavigator navigator].URLMap;
+  [map from:@"com.manga://hello" toViewController:[ClassAViewController class]];
+  [map from:@"com.manga://view" toViewController:[ViewController class]];
+
+  [[TCNavigator navigator] openURLAction:[[TCURLAction actionWithURLPath:@"com.manga://view"] applyAnimated:YES]];
+
   // Override point for customization after application launch.
   return YES;
 }

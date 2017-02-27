@@ -14,4 +14,8 @@
 
 - (UIViewController*)topSubcontroller;
 
+- (void)bringControllerToFront:(UIViewController*)controller animated:(BOOL)animated;
+
+- (void)addSubcontroller:(UIViewController*)controller animated:(BOOL)animated;
+
 @end

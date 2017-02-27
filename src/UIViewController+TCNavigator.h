@@ -10,8 +10,15 @@
 
 @interface UIViewController (TCNavigator)
 
+
+@property (nonatomic, retain) UIViewController *superController;
+
 - (BOOL)canContainControllers;
 
 - (UIViewController*)topSubcontroller;
+
+- (void)bringControllerToFront:(UIViewController*)controller animated:(BOOL)animated;
+
+- (void)addSubcontroller:(UIViewController*)controller animated:(BOOL)animated;
 
 @end

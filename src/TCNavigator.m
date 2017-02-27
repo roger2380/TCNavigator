@@ -29,8 +29,44 @@ static TCNavigator *gNavigator = nil;
 }
 
 
++ (TCNavigator*)navigator {
+  TCNavigator *navigator = [TCNavigator globalNavigator];
+  if (nil == navigator) {
+    navigator = [[TCNavigator alloc] init];
+    [self setGlobalNavigator:navigator];
+  }
+  return navigator;
+}
+
+
++ (void)setGlobalNavigator:(TCNavigator*)navigator {
+  if (gNavigator != navigator) {
+    gNavigator = navigator;
+  }
+}
+
+
 + (TCNavigator*)globalNavigator {
   return gNavigator;
+}
+
+
+- (void)setRootViewController:(UIViewController*)controller {
+  if (controller != _rootViewController) {
+    _rootViewController = controller;
+    [self.window setRootViewController:_rootViewController];
+  }
+}
+
+
+- (UIWindow*)window {
+  if (nil == _window) {
+    UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
+    if (nil != keyWindow) {
+      _window = keyWindow;
+    }
+  }
+  return _window;
 }
 
 
@@ -68,8 +104,6 @@ static TCNavigator *gNavigator = nil;
                           parentURLPath:action.parentURLPath
                             withPattern:pattern
                                  action:action];
-
-  //TODO跳转
   return controller;
 }
 
@@ -87,10 +121,10 @@ static TCNavigator *gNavigator = nil;
 }
 
 
-- (BOOL)presentController: (UIViewController*)controller
-            parentURLPath: (NSString*)parentURLPath
-              withPattern: (TCURLNavigatorPattern*)pattern
-                   action: (TCURLAction*)action {
+- (BOOL)presentController:(UIViewController*)controller
+            parentURLPath:(NSString*)parentURLPath
+              withPattern:(TCURLNavigatorPattern*)pattern
+                   action:(TCURLAction*)action {
   BOOL didPresentNewController = NO;
   
   if (nil != controller) {
@@ -107,8 +141,8 @@ static TCNavigator *gNavigator = nil;
       if (nil != parentController && parentController != topViewController) {
         [self presentController:parentController
                parentController:nil
-                           mode:TTNavigationModeNone
-                         action:[TTURLAction actionWithURLPath:nil]];
+                           mode:TCNavigationModeNone
+                         action:[TCURLAction actionWithURLPath:nil]];
       }
       
       didPresentNewController = [self presentController:controller
@@ -131,7 +165,7 @@ static TCNavigator *gNavigator = nil;
     // If this is the first controller, and it is not a "container", forcibly put
     // a navigation controller at the root of the controller hierarchy.
     if (nil == _rootViewController && !isContainer) {
-      [self setRootViewController:[[[[self navigationControllerClass] alloc] init] autorelease]];
+      [self setRootViewController:[[[self navigationControllerClass] alloc] init]];
     }
     
     if (nil != parentURLPath) {
@@ -146,6 +180,80 @@ static TCNavigator *gNavigator = nil;
         return nil;
       }
     }
+  }
+}
+
+
+- (BOOL)presentController:(UIViewController*)controller
+         parentController:(UIViewController*)parentController
+                     mode:(TCNavigationMode)mode
+                   action:(TCURLAction*)action {
+  BOOL didPresentNewController = YES;
+  
+  if (nil == _rootViewController) {
+    [self setRootViewController:controller];
+    
+  } else {
+    UIViewController *previousSuper = controller.superController;
+    //如果controller有contain controller ，比如navgation controller 或者 tabbar controller
+    if (nil != previousSuper) {
+      if (previousSuper != parentController) {
+        //如果这个控制器已经存在在栈中
+        for (UIViewController *superController = previousSuper; controller; ) {
+          UIViewController *nextSuper = superController.superController;
+          [superController bringControllerToFront:controller
+                                         animated:!nextSuper];
+          controller = superController;
+          superController = nextSuper;
+        }
+      }
+      didPresentNewController = NO;
+      
+    } else if (nil != parentController) {
+      [self presentDependantController:controller
+                      parentController:parentController
+                                  mode:mode
+                                action:action];
+    }
+  }
+  
+  return didPresentNewController;
+}
+
+
+- (void)presentDependantController:(UIViewController*)controller
+                  parentController:(UIViewController*)parentController
+                              mode:(TCNavigationMode)mode
+                            action:(TCURLAction*)action {
+  
+  if (mode == TCNavigationModeModal) {
+    [self presentModalController:controller
+                parentController:parentController
+                        animated:action.animated];
+    
+  } else if (mode == TCNavigationModePopover) {
+   //暂时不支持
+    
+  } else {
+    [parentController addSubcontroller:controller
+                              animated:action.animated];
+  }
+}
+
+
+- (void)presentModalController:(UIViewController*)controller
+              parentController:(UIViewController*)parentController
+                      animated:(BOOL)animated {
+  if ([controller isKindOfClass:[UINavigationController class]]) {
+    [parentController presentViewController:controller animated:animated completion:NULL];
+    
+  } else {
+    UINavigationController *navController = [[[self navigationControllerClass] alloc] init];
+//    navController.modalTransitionStyle = transition;
+    navController.modalPresentationStyle = controller.modalPresentationStyle;
+    [navController pushViewController: controller
+                             animated: NO];
+    [parentController presentViewController:navController animated:animated completion:NULL];
   }
 }
 
@@ -172,6 +280,10 @@ static TCNavigator *gNavigator = nil;
   return nil;
 }
 
+
+- (Class)navigationControllerClass {
+  return [UINavigationController class];
+}
 
 
 @end
