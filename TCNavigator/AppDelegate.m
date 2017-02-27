@@ -27,9 +27,9 @@
   TCURLMap *map = [TCNavigator navigator].URLMap;
   [map from:@"com.manga://hello" toViewController:[ClassAViewController class]];
   [map from:@"com.manga://view" toViewController:[ViewController class]];
+  [map from:@"com.manga://cccc/(initWithText)" toViewController:[ClassAViewController class]];
 
   [[TCNavigator navigator] openURLAction:[[TCURLAction actionWithURLPath:@"com.manga://view"] applyAnimated:YES]];
-
   // Override point for customization after application launch.
   return YES;
 }

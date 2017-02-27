@@ -69,7 +69,7 @@
 
 
 - (id)invoke:(id)target withURL:(NSURL*)URL {
-  id returnValue = nil;
+  __weak id returnValue = nil;  //这里的weak不能删
   
   NSMethodSignature *sig = [target methodSignatureForSelector:self.selector];
   if (sig) {
@@ -218,11 +218,6 @@
   id returnValue = nil;
   
   if (self.instantiatesClass) {
-    //suppress static analyzer warning for this part
-    // - invoke:withURL:query actually calls an - init method
-    // which returns either a new object with retain count of +1
-    // or returnValue (which already has +1 retain count)
-#ifndef __clang_analyzer__
     returnValue = [_targetClass alloc];
     if (self.selector) {
       returnValue = [self invoke:returnValue withURL:URL];
@@ -230,7 +225,6 @@
     } else {
       returnValue = [returnValue init];
     }
-#endif
     
   } else {
     id target = _targetObject;

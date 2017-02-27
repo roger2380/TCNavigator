@@ -9,13 +9,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "src/TCNavigator.m"
-            timestampString = "509884322.691939"
+            filePath = "src/TCURLNavigatorPattern.m"
+            timestampString = "509906569.154657"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "230"
-            endingLineNumber = "230"
-            landmarkName = "-presentDependantController:parentController:mode:action:"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
+            landmarkName = "-setArgument:pattern:forInvocation:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "src/TCNavigator.m"
+            timestampString = "509905500.65808"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "-window"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

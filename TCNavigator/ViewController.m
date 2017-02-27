@@ -14,8 +14,15 @@
 @end
 
 @implementation ViewController
+
+
+- (void)dealloc {
+  NSLog(@"释放了XXZ");
+}
+
 - (void)viewDidLoad {
   [super viewDidLoad];
+  
   self.view.backgroundColor = [UIColor greenColor];
   
   UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -26,8 +33,12 @@
   // Do any additional setup after loading the view, typically from a nib.
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+  self.navigationController.navigationBarHidden = YES;
+}
+
 - (void)show {
-  [[TCNavigator navigator] openURLAction:[[TCURLAction actionWithURLPath:@"com.manga://hello"] applyAnimated:YES]];
+  [[TCNavigator navigator] openURLAction:[[TCURLAction actionWithURLPath:@"com.manga://cccc/wworiweourwei"] applyAnimated:YES]];
 }
 
 - (void)didReceiveMemoryWarning {

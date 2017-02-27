@@ -10,4 +10,6 @@
 
 @interface ClassAViewController : UIViewController
 
+- (instancetype)initWithText:(NSString *)text;
+
 @end

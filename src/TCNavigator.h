@@ -15,11 +15,11 @@
 
 @interface TCNavigator : NSObject {
   UIViewController *_rootViewController;
-  UIWindow         *_window;
 }
 
 @property (nonatomic, readonly) TCURLMap                *URLMap;
-@property (nonatomic, weak)     id<TCNavigtorDelegate>   delegate;
+@property (nonatomic, weak)     id<TCNavigtorDelegate>  delegate;
+@property (nonatomic, strong) UIWindow                  *window;
 
 + (TCNavigator*)navigator;
 

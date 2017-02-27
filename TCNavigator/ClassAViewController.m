@@ -14,8 +14,24 @@
 
 @implementation ClassAViewController
 
+- (void)dealloc {
+  NSLog(@"释放了");
+}
+
+- (instancetype)initWithText:(NSString *)text {
+  self = [super init];
+  if (self) {
+    NSLog(@"%@", text);
+  }
+  return self;
+}
+
 - (void)viewDidLoad {
-    [super viewDidLoad];
+  [super viewDidLoad];
+  
+  self.navigationController.navigationBarHidden = NO;
+  
+  self.view.backgroundColor = [UIColor blueColor];
     // Do any additional setup after loading the view.
 }
 
