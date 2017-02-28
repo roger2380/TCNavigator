@@ -25,11 +25,11 @@
 
 
 - (void)dealloc {
-  NSLog(@"ViewController释放了");
 }
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  self.tcTitle = @"ViewController";
   
   self.view.backgroundColor = [UIColor lightGrayColor];
   

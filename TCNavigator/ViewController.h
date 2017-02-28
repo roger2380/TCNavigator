@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TitleViewController.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : TitleViewController
 
 
 @end
