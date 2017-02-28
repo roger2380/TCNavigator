@@ -232,7 +232,7 @@
       returnValue = [self invoke:target withURL:URL];
       
     } else {
-      NSLog(@"No object created from URL:'%@' URL", URL);
+      returnValue = _targetObject;
     }
   }
   return returnValue;

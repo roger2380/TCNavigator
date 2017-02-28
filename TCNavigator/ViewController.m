@@ -15,30 +15,34 @@
 
 @implementation ViewController
 
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+  self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+  if (self) {
+    self.hidesBottomBarWhenPushed = YES;
+  }
+  return self;
+}
+
 
 - (void)dealloc {
-  NSLog(@"释放了XXZ");
+  NSLog(@"ViewController释放了");
 }
 
 - (void)viewDidLoad {
   [super viewDidLoad];
   
-  self.view.backgroundColor = [UIColor greenColor];
+  self.view.backgroundColor = [UIColor lightGrayColor];
   
   UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
   [self.view addSubview:btn];
-  btn.frame = CGRectMake(0, 0, 100, 100);
+  btn.frame = CGRectMake(100, 100, 100, 100);
   btn.backgroundColor = [UIColor redColor];
   [btn addTarget:self action:@selector(show) forControlEvents:UIControlEventTouchUpInside];
   // Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-  self.navigationController.navigationBarHidden = YES;
-}
-
 - (void)show {
-  [[TCNavigator navigator] openURLAction:[[TCURLAction actionWithURLPath:@"com.manga://cccc/wworiweourwei"] applyAnimated:YES]];
+  [[TCNavigator navigator] openURLAction:[[TCURLAction actionWithURLPath:@"com.manga://tab4"] applyAnimated:YES]];
 }
 
 - (void)didReceiveMemoryWarning {

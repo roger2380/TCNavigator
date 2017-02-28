@@ -25,13 +25,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "src/TCNavigator.m"
-            timestampString = "509905500.65808"
+            filePath = "src/TCURLMap.m"
+            timestampString = "509951159.746294"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "-window"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
+            landmarkName = "-objectForURL:pattern:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "src/TCURLNavigatorPattern.m"
+            timestampString = "509951324.036418"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "220"
+            endingLineNumber = "220"
+            landmarkName = "-createObjectFromURL:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

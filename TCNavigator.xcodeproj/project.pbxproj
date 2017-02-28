@@ -14,7 +14,13 @@
 		655524991E602F6800042CD8 /* UINavigationController+TCNavigator.m in Sources */ = {isa = PBXBuildFile; fileRef = 655524981E602F6800042CD8 /* UINavigationController+TCNavigator.m */; };
 		6555249C1E60314100042CD8 /* UITabBarController+TCNavigator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6555249B1E60314100042CD8 /* UITabBarController+TCNavigator.m */; };
 		655F74881E64316A00B580B0 /* NSString+TCNavigator.m in Sources */ = {isa = PBXBuildFile; fileRef = 655F74871E64316A00B580B0 /* NSString+TCNavigator.m */; };
-		655F748B1E6432DD00B580B0 /* ClassAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 655F748A1E6432DD00B580B0 /* ClassAViewController.m */; };
+		655F748E1E65170300B580B0 /* Tab1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 655F748D1E65170300B580B0 /* Tab1ViewController.m */; };
+		655F74911E65171B00B580B0 /* TitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 655F74901E65171B00B580B0 /* TitleViewController.m */; };
+		655F74941E65188C00B580B0 /* Tab2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 655F74931E65188C00B580B0 /* Tab2ViewController.m */; };
+		655F74971E65189500B580B0 /* Tab3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 655F74961E65189500B580B0 /* Tab3ViewController.m */; };
+		655F749A1E65189D00B580B0 /* Tab4ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 655F74991E65189D00B580B0 /* Tab4ViewController.m */; };
+		655F74B51E6543A100B580B0 /* AViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 655F74B41E6543A100B580B0 /* AViewController.m */; };
+		655F74B81E6543DC00B580B0 /* BViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 655F74B71E6543DC00B580B0 /* BViewController.m */; };
 		6596C11E1E52A0EA00B63C7A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6596C11D1E52A0EA00B63C7A /* main.m */; };
 		6596C1211E52A0EA00B63C7A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6596C1201E52A0EA00B63C7A /* AppDelegate.m */; };
 		6596C1241E52A0EA00B63C7A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6596C1231E52A0EA00B63C7A /* ViewController.m */; };
@@ -44,8 +50,20 @@
 		6555249B1E60314100042CD8 /* UITabBarController+TCNavigator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarController+TCNavigator.m"; sourceTree = "<group>"; };
 		655F74861E64316A00B580B0 /* NSString+TCNavigator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TCNavigator.h"; sourceTree = "<group>"; };
 		655F74871E64316A00B580B0 /* NSString+TCNavigator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TCNavigator.m"; sourceTree = "<group>"; };
-		655F74891E6432DD00B580B0 /* ClassAViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassAViewController.h; sourceTree = "<group>"; };
-		655F748A1E6432DD00B580B0 /* ClassAViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassAViewController.m; sourceTree = "<group>"; };
+		655F748C1E65170300B580B0 /* Tab1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tab1ViewController.h; sourceTree = "<group>"; };
+		655F748D1E65170300B580B0 /* Tab1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tab1ViewController.m; sourceTree = "<group>"; };
+		655F748F1E65171B00B580B0 /* TitleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleViewController.h; sourceTree = "<group>"; };
+		655F74901E65171B00B580B0 /* TitleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleViewController.m; sourceTree = "<group>"; };
+		655F74921E65188C00B580B0 /* Tab2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tab2ViewController.h; sourceTree = "<group>"; };
+		655F74931E65188C00B580B0 /* Tab2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tab2ViewController.m; sourceTree = "<group>"; };
+		655F74951E65189500B580B0 /* Tab3ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tab3ViewController.h; sourceTree = "<group>"; };
+		655F74961E65189500B580B0 /* Tab3ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tab3ViewController.m; sourceTree = "<group>"; };
+		655F74981E65189D00B580B0 /* Tab4ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tab4ViewController.h; sourceTree = "<group>"; };
+		655F74991E65189D00B580B0 /* Tab4ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tab4ViewController.m; sourceTree = "<group>"; };
+		655F74B31E6543A100B580B0 /* AViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AViewController.h; sourceTree = "<group>"; };
+		655F74B41E6543A100B580B0 /* AViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AViewController.m; sourceTree = "<group>"; };
+		655F74B61E6543DC00B580B0 /* BViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BViewController.h; sourceTree = "<group>"; };
+		655F74B71E6543DC00B580B0 /* BViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BViewController.m; sourceTree = "<group>"; };
 		6596C1191E52A0EA00B63C7A /* TCNavigator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TCNavigator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6596C11D1E52A0EA00B63C7A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6596C11F1E52A0EA00B63C7A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -99,12 +117,24 @@
 		6596C11B1E52A0EA00B63C7A /* TCNavigator */ = {
 			isa = PBXGroup;
 			children = (
+				655F748F1E65171B00B580B0 /* TitleViewController.h */,
+				655F74901E65171B00B580B0 /* TitleViewController.m */,
 				6596C11F1E52A0EA00B63C7A /* AppDelegate.h */,
 				6596C1201E52A0EA00B63C7A /* AppDelegate.m */,
+				655F748C1E65170300B580B0 /* Tab1ViewController.h */,
+				655F748D1E65170300B580B0 /* Tab1ViewController.m */,
+				655F74921E65188C00B580B0 /* Tab2ViewController.h */,
+				655F74931E65188C00B580B0 /* Tab2ViewController.m */,
+				655F74951E65189500B580B0 /* Tab3ViewController.h */,
+				655F74961E65189500B580B0 /* Tab3ViewController.m */,
+				655F74981E65189D00B580B0 /* Tab4ViewController.h */,
+				655F74991E65189D00B580B0 /* Tab4ViewController.m */,
 				6596C1221E52A0EA00B63C7A /* ViewController.h */,
 				6596C1231E52A0EA00B63C7A /* ViewController.m */,
-				655F74891E6432DD00B580B0 /* ClassAViewController.h */,
-				655F748A1E6432DD00B580B0 /* ClassAViewController.m */,
+				655F74B31E6543A100B580B0 /* AViewController.h */,
+				655F74B41E6543A100B580B0 /* AViewController.m */,
+				655F74B61E6543DC00B580B0 /* BViewController.h */,
+				655F74B71E6543DC00B580B0 /* BViewController.m */,
 				6596C1281E52A0EA00B63C7A /* Assets.xcassets */,
 				6596C12A1E52A0EA00B63C7A /* LaunchScreen.storyboard */,
 				6596C12D1E52A0EA00B63C7A /* Info.plist */,
@@ -227,19 +257,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				655F749A1E65189D00B580B0 /* Tab4ViewController.m in Sources */,
 				65B1CE8E1E55F0B5003BD294 /* TCURLWildcard.m in Sources */,
 				655523711E52B2DD00042CD8 /* TCURLAction.m in Sources */,
 				655524571E55931000042CD8 /* TCURLPattern.m in Sources */,
+				655F74941E65188C00B580B0 /* Tab2ViewController.m in Sources */,
+				655F74B81E6543DC00B580B0 /* BViewController.m in Sources */,
 				65B1CE8B1E55F0A1003BD294 /* TCURLLiteral.m in Sources */,
 				655F74881E64316A00B580B0 /* NSString+TCNavigator.m in Sources */,
 				6596C1391E52AA1D00B63C7A /* TCURLMap.m in Sources */,
 				655523591E52AFA800042CD8 /* TCURLNavigatorPattern.m in Sources */,
-				655F748B1E6432DD00B580B0 /* ClassAViewController.m in Sources */,
 				6596C1241E52A0EA00B63C7A /* ViewController.m in Sources */,
 				655524961E602F2000042CD8 /* UIViewController+TCNavigator.m in Sources */,
 				6596C1211E52A0EA00B63C7A /* AppDelegate.m in Sources */,
+				655F748E1E65170300B580B0 /* Tab1ViewController.m in Sources */,
 				6596C1361E52A9F700B63C7A /* TCNavigator.m in Sources */,
+				655F74911E65171B00B580B0 /* TitleViewController.m in Sources */,
+				655F74B51E6543A100B580B0 /* AViewController.m in Sources */,
 				6596C11E1E52A0EA00B63C7A /* main.m in Sources */,
+				655F74971E65189500B580B0 /* Tab3ViewController.m in Sources */,
 				655524991E602F6800042CD8 /* UINavigationController+TCNavigator.m in Sources */,
 				6555249C1E60314100042CD8 /* UITabBarController+TCNavigator.m in Sources */,
 				65B1CE921E55F190003BD294 /* TCURLArguments.m in Sources */,

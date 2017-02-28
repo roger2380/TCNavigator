@@ -1,43 +1,32 @@
 //
-//  ClassAViewController.m
+//  Tab3ViewController.m
 //  TCNavigator
 //
-//  Created by xbwu on 17/2/27.
+//  Created by xbwu on 17/2/28.
 //  Copyright © 2017年 xbwu. All rights reserved.
 //
 
-#import "ClassAViewController.h"
+#import "Tab3ViewController.h"
+#import "TCNavigator.h"
 
-@interface ClassAViewController ()
+@interface Tab3ViewController ()
 
 @end
 
-@implementation ClassAViewController
-
-- (void)dealloc {
-  NSLog(@"释放了");
-}
-
-- (instancetype)initWithText:(NSString *)text {
-  self = [super init];
-  if (self) {
-    NSLog(@"%@", text);
-  }
-  return self;
-}
+@implementation Tab3ViewController
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  
-  self.navigationController.navigationBarHidden = NO;
-  
+  self.tcTitle = @"tab3";
   self.view.backgroundColor = [UIColor blueColor];
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+  [super didReceiveMemoryWarning];
+}
+
+- (void)responseToAction {
+  [[TCNavigator navigator] openURLAction:[TCURLAction actionWithURLPath:@""]];
 }
 
 /*

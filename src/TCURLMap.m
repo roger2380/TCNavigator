@@ -86,12 +86,50 @@
 
 
 - (void)from:(NSString*)URL toModalViewController:(id)target {
-  
+  TCURLNavigatorPattern *pattern = [[TCURLNavigatorPattern alloc] initWithTarget:target
+                                                                            mode:TCNavigationModeModal];
+  [self addObjectPattern:pattern forURL:URL];
+}
+
+
+- (void)from:(NSString*)URL toModalViewController:(id)target selector:(SEL)selector {
+  TCURLNavigatorPattern *pattern = [[TCURLNavigatorPattern alloc] initWithTarget:target
+                                                                            mode:TCNavigationModeModal];
+  pattern.selector = selector;
+  [self addObjectPattern:pattern forURL:URL];
+}
+
+
+- (void)from:(NSString*)URL parent:(NSString*)parentURL toModalViewController:(id)target selector:(SEL)selector {
+  TCURLNavigatorPattern *pattern = [[TCURLNavigatorPattern alloc] initWithTarget:target
+                                                                            mode:TCNavigationModeModal];
+  pattern.selector = selector;
+  pattern.parentURL = parentURL;
+  [self addObjectPattern:pattern forURL:URL];
 }
 
 
 - (void)from:(NSString*)URL toSharedViewController:(id)target {
-  
+  TCURLNavigatorPattern *pattern = [[TCURLNavigatorPattern alloc] initWithTarget:target
+                                                                            mode:TCNavigationModeShare];
+  [self addObjectPattern:pattern forURL:URL];
+}
+
+
+- (void)from:(NSString*)URL toSharedViewController:(id)target selector:(SEL)selector {
+  TCURLNavigatorPattern *pattern = [[TCURLNavigatorPattern alloc] initWithTarget:target
+                                                                            mode:TCNavigationModeShare];
+  pattern.selector = selector;
+  [self addObjectPattern:pattern forURL:URL];
+}
+
+
+- (void)from:(NSString*)URL parent:(NSString*)parentURL toSharedViewController:(id)target selector:(SEL)selector {
+  TCURLNavigatorPattern *pattern = [[TCURLNavigatorPattern alloc] initWithTarget:target
+                                                                            mode:TCNavigationModeShare];
+  pattern.selector = selector;
+  pattern.parentURL = parentURL;
+  [self addObjectPattern:pattern forURL:URL];
 }
 
 
