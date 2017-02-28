@@ -1,25 +1,22 @@
 //
-//  Tab1ViewController.m
+//  EViewController.m
 //  TCNavigator
 //
 //  Created by xbwu on 17/2/28.
 //  Copyright © 2017年 xbwu. All rights reserved.
 //
 
-#import "Tab1ViewController.h"
+#import "EViewController.h"
 #import "TCNavigator.h"
 
-@interface Tab1ViewController ()
+@interface EViewController ()
 
 @end
 
-@implementation Tab1ViewController
+@implementation EViewController
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  self.view.backgroundColor = [UIColor greenColor];
-  
-  [self.actionBtn setTitle:@"push->ViewController" forState:UIControlStateNormal];
   // Do any additional setup after loading the view.
 }
 
@@ -29,7 +26,8 @@
 }
 
 - (void)responseToAction {
-  [[TCNavigator navigator] openURLAction:[[TCURLAction actionWithURLPath:@"com.manga://vc"] applyAnimated:YES]];
+  NSLog(@"%@", self.parentViewController);
+//  [[TCNavigator navigator] openURLAction:[[TCURLAction actionWithURLPath:@"com.manga://vc-f"] applyAnimated:YES]];
 }
 
 @end

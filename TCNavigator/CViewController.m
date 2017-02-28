@@ -17,8 +17,11 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  self.tcTitle = @"CViewController";
+
   self.view.backgroundColor = [UIColor colorWithRed:1.0 green:192/255.0 blue:203/255.0 alpha:1];
+  
+  [self.actionBtn setTitle:@"present->DViewController" forState:UIControlStateNormal];
+
   // Do any additional setup after loading the view.
 }
 
@@ -28,7 +31,7 @@
 }
 
 - (void)responseToAction {
-  [[TCNavigator navigator] openURLAction:[[TCURLAction actionWithURLPath:@"com.manga://vc-b"] applyAnimated:YES]];
+  [[TCNavigator navigator] openURLAction:[[TCURLAction actionWithURLPath:@"com.manga://vc-d"] applyAnimated:YES]];
 }
 
 @end

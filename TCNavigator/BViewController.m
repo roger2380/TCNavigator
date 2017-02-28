@@ -17,8 +17,9 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  self.tcTitle = @"BViewController";
+
   self.view.backgroundColor = [UIColor brownColor];
+  [self.actionBtn setTitle:@"present->DViewController" forState:UIControlStateNormal];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -27,7 +28,7 @@
 }
 
 - (void)responseToAction {
-  [[TCNavigator navigator] openURLAction:[[TCURLAction actionWithURLPath:@"com.manga://vc-d"] applyAnimated:YES]];
+  [[TCNavigator navigator] openURLAction:[[TCURLAction actionWithURLPath:@"com.manga://vc-e"] applyAnimated:YES]];
 }
 
 

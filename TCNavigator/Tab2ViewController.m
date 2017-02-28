@@ -17,7 +17,6 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  self.tcTitle = @"tab2";
   self.view.backgroundColor = [UIColor yellowColor];
 }
 
@@ -27,8 +26,9 @@
 }
 
 - (void)responseToAction {
-  [[TCNavigator navigator] openURLAction:[TCURLAction actionWithURLPath:@""]];
+  [[TCNavigator navigator] openURLAction:[[TCURLAction actionWithURLPath:@"com.manga://vc-e"] applyAnimated:YES]];
 }
+
 
 /*
  #pragma mark - Navigation

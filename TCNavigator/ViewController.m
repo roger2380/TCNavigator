@@ -29,14 +29,13 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  self.tcTitle = @"ViewController";
   
   self.view.backgroundColor = [UIColor lightGrayColor];
   
   UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-  [btn setTitle:@"to:tab4" forState:UIControlStateNormal];
+  [btn setTitle:@"To:Tab4" forState:UIControlStateNormal];
   [self.view addSubview:btn];
-  btn.frame = CGRectMake(100, 300, 100, 100);
+  btn.frame = CGRectMake(self.view.frame.size.width/2 - 100, 300, 200, 100);
   btn.backgroundColor = [UIColor redColor];
   [btn addTarget:self action:@selector(show) forControlEvents:UIControlEventTouchUpInside];
   // Do any additional setup after loading the view, typically from a nib.

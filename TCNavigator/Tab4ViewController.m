@@ -17,8 +17,7 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  self.tcTitle = @"tab4";
-  [self.actionBtn setTitle:@"present:a" forState:UIControlStateNormal];
+  [self.actionBtn setTitle:@"present->AViewController" forState:UIControlStateNormal];
   self.view.backgroundColor = [UIColor purpleColor];
 }
 

@@ -22,6 +22,8 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  
+  self.tcTitle = NSStringFromClass([self class]);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,6 +35,7 @@
   if (_actionBtn == nil) {
     _actionBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.view addSubview:_actionBtn];
+    _actionBtn.titleLabel.font = [UIFont systemFontOfSize:14];
     _actionBtn.backgroundColor = [UIColor orangeColor];
     [_actionBtn addTarget:self action:@selector(responseToAction) forControlEvents:UIControlEventTouchUpInside];
   }
@@ -42,6 +45,7 @@
 - (UILabel *)titleLabel {
   if (_titleLabel == nil) {
     _titleLabel = [[UILabel alloc] init];
+    _titleLabel.numberOfLines = 0;
     _titleLabel.textAlignment = 1;
     [self.view addSubview:_titleLabel];
     _titleLabel.textColor = [UIColor redColor];
@@ -58,8 +62,8 @@
 }
 
 - (void)viewDidLayoutSubviews {
-  self.titleLabel.frame = CGRectMake(self.view.frame.size.width/2.0 - 200/2.0, 80, 200, 30);
-  self.actionBtn.frame = CGRectMake(self.view.frame.size.width/2.0 - 100/2.0, 150, 100, 100);
+  self.titleLabel.frame = CGRectMake(self.view.frame.size.width/2.0 - 200/2.0, 60, 200, 50);
+  self.actionBtn.frame = CGRectMake(self.view.frame.size.width/2.0 - 200/2.0, 150, 200, 100);
 }
 
 /*

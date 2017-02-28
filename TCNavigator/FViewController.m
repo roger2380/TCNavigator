@@ -1,31 +1,33 @@
 //
-//  Tab3ViewController.m
+//  FViewController.m
 //  TCNavigator
 //
 //  Created by xbwu on 17/2/28.
 //  Copyright © 2017年 xbwu. All rights reserved.
 //
 
-#import "Tab3ViewController.h"
+#import "FViewController.h"
 #import "TCNavigator.h"
 
-@interface Tab3ViewController ()
+@interface FViewController ()
 
 @end
 
-@implementation Tab3ViewController
+@implementation FViewController
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  self.view.backgroundColor = [UIColor blueColor];
+  // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];
+  // Dispose of any resources that can be recreated.
 }
 
+
 - (void)responseToAction {
-  [[TCNavigator navigator] openURLAction:[[TCURLAction actionWithURLPath:@"com.manga://vc-b"] applyAnimated:YES]];
+  [[TCNavigator navigator] openURLAction:[[TCURLAction actionWithURLPath:@"com.manga://tab3"] applyAnimated:YES]];
 }
 
 /*

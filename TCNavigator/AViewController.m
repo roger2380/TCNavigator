@@ -22,12 +22,17 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  self.tcTitle = @"AViewController";
+
+  self.tcTitle = [NSString stringWithFormat:@"%@\nParent:Tab3", NSStringFromClass([self class])];
   self.view.backgroundColor = [UIColor lightGrayColor];
+  
+  [self.actionBtn setTitle:@"dissmiss" forState:UIControlStateNormal];
   
   UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
   [self.view addSubview:btn];
-  btn.frame = CGRectMake(100, 300, 100, 100);
+  btn.titleLabel.numberOfLines = 0;
+  [btn setTitle:@"push->CViewController" forState:UIControlStateNormal];
+  btn.frame = CGRectMake(self.view.frame.size.width/2 - 100, 300, 200, 100);
   btn.backgroundColor = [UIColor blueColor];
   [btn addTarget:self action:@selector(tap) forControlEvents:UIControlEventTouchUpInside];
 }

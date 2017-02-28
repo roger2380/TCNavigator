@@ -15,6 +15,8 @@
 #import "BViewController.h"
 #import "CViewController.h"
 #import "DViewController.h"
+#import "EViewController.h"
+#import "FViewController.h"
 
 #import "Tab1ViewController.h"
 #import "Tab2ViewController.h"
@@ -38,9 +40,11 @@
   
   [map from:@"com.manga://vc" toViewController:[ViewController class]];
   [map from:@"com.manga://vc-a" parent:@"com.manga://tab3" toModalViewController:[AViewController class] selector:NULL];
-  [map from:@"com.manga://vc-b" toViewController:[BViewController class]];
+  [map from:@"com.manga://vc-b" toModalViewController:[BViewController class]];
   [map from:@"com.manga://vc-c" toSharedViewController:[CViewController class]];
   [map from:@"com.manga://vc-d" toModalViewController:[DViewController class]];
+  [map from:@"com.manga://vc-e" toModalViewController:[EViewController class]];
+  [map from:@"com.manga://vc-f" toModalViewController:[FViewController class]];
 
   Tab1ViewController *tab1 = [[Tab1ViewController alloc] init];
   UINavigationController *nav1 = [[UINavigationController alloc] initWithRootViewController:tab1];

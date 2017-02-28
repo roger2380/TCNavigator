@@ -17,10 +17,14 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  self.tcTitle = @"DViewController";
+
   self.view.backgroundColor = [UIColor purpleColor];
   
+  [self.actionBtn setTitle:@"ToShare->CViewController" forState:UIControlStateNormal];
+
+  
   UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+  [btn setTitle:@"dissmiss" forState:UIControlStateNormal];
   [self.view addSubview:btn];
   btn.frame = CGRectMake(100, 300, 100, 100);
   btn.backgroundColor = [UIColor blueColor];
