@@ -11,5 +11,6 @@
 @interface TitleViewController : UIViewController
 
 @property (nonatomic, strong) NSString *tcTitle;
+@property (nonatomic, strong) UIButton *actionBtn;
 
 @end

@@ -11,7 +11,6 @@
 @interface TitleViewController ()
 
 @property (nonatomic, strong) UILabel *titleLabel;
-@property (nonatomic, strong) UIButton *actionBtn;
 
 @end
 
