@@ -33,7 +33,9 @@
 }
 
 - (void)back {
-  [self dismissViewControllerAnimated:YES completion:NULL];
+  NSLog(@"%@", self.parentViewController.parentViewController);
+  NSLog(@"%@",self.presentingViewController);
+//  [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,7 +44,7 @@
 }
 
 - (void)responseToAction {
-  [[TCNavigator navigator] openURLAction:[[TCURLAction actionWithURLPath:@"com.manga://vc-c"] applyAnimated:YES]];
+  [[TCNavigator navigator] openURLAction:[[TCURLAction actionWithURLPath:@"com.manga://tab4"] applyAnimated:YES]];
 }
 
 @end

@@ -39,12 +39,12 @@
   
   
   [map from:@"com.manga://vc" toViewController:[ViewController class]];
-  [map from:@"com.manga://vc-a" parent:@"com.manga://tab3" toModalViewController:[AViewController class] selector:NULL];
-  [map from:@"com.manga://vc-b" toModalViewController:[BViewController class]];
+  [map from:@"com.manga://vc-a" toModalViewController:[AViewController class] selector:NULL];
+  [map from:@"com.manga://vc-b" toViewController:[BViewController class]];
   [map from:@"com.manga://vc-c" toSharedViewController:[CViewController class]];
-  [map from:@"com.manga://vc-d" toModalViewController:[DViewController class]];
+  [map from:@"com.manga://vc-d" toViewController:[DViewController class]];
   [map from:@"com.manga://vc-e" toModalViewController:[EViewController class]];
-  [map from:@"com.manga://vc-f" toModalViewController:[FViewController class]];
+  [map from:@"com.manga://vc-f" toSharedViewController:[FViewController class]];
 
   Tab1ViewController *tab1 = [[Tab1ViewController alloc] init];
   UINavigationController *nav1 = [[UINavigationController alloc] initWithRootViewController:tab1];

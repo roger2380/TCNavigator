@@ -200,6 +200,9 @@ static TCNavigator *gNavigator = nil;
       if (previousSuper != parentController) {
         //如果这个控制器已经存在在栈中
         for (UIViewController *superController = previousSuper; controller; ) {
+          if (superController.presentedViewController) {
+            [superController dismissViewControllerAnimated:YES completion:NULL];
+          }
           UIViewController *nextSuper = superController.superController;
           [superController bringControllerToFront:controller
                                          animated:!nextSuper];

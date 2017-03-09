@@ -17,6 +17,7 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  self.view.backgroundColor = [UIColor whiteColor];
   // Do any additional setup after loading the view.
 }
 
@@ -26,8 +27,8 @@
 }
 
 - (void)responseToAction {
-  NSLog(@"%@", self.parentViewController);
-//  [[TCNavigator navigator] openURLAction:[[TCURLAction actionWithURLPath:@"com.manga://vc-f"] applyAnimated:YES]];
+  NSLog(@"%@", self.presentingViewController);
+  [[TCNavigator navigator] openURLAction:[[TCURLAction actionWithURLPath:@"com.manga://vc-f"] applyAnimated:YES]];
 }
 
 @end

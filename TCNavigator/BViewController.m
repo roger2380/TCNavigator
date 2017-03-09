@@ -18,8 +18,21 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
 
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btn setTitle:@"To:Tab4" forState:UIControlStateNormal];
+    [self.view addSubview:btn];
+    btn.frame = CGRectMake(self.view.frame.size.width/2 - 100, 300, 200, 100);
+    btn.backgroundColor = [UIColor redColor];
+    [btn addTarget:self action:@selector(show) forControlEvents:UIControlEventTouchUpInside];
+  
   self.view.backgroundColor = [UIColor brownColor];
   [self.actionBtn setTitle:@"present->DViewController" forState:UIControlStateNormal];
+}
+
+- (void)show {
+  NSLog(@"%@", self.parentViewController);
+  NSLog(@"%@", self.parentViewController.parentViewController);
+//  [[TCNavigator navigator] openURLAction:[[TCURLAction actionWithURLPath:@"com.manga://vc-f"] applyAnimated:YES]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -28,7 +41,7 @@
 }
 
 - (void)responseToAction {
-  [[TCNavigator navigator] openURLAction:[[TCURLAction actionWithURLPath:@"com.manga://vc-e"] applyAnimated:YES]];
+  [[TCNavigator navigator] openURLAction:[[TCURLAction actionWithURLPath:@"com.manga://vc-c"] applyAnimated:YES]];
 }
 
 

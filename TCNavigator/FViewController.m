@@ -27,7 +27,7 @@
 
 
 - (void)responseToAction {
-  [[TCNavigator navigator] openURLAction:[[TCURLAction actionWithURLPath:@"com.manga://tab3"] applyAnimated:YES]];
+  [[TCNavigator navigator] openURLAction:[[TCURLAction actionWithURLPath:@"com.manga://vc-b"] applyAnimated:YES]];
 }
 
 /*
